@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Celebration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .slider {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 3px;
+            user-select: none;
+        }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Festival Celebration</h1>
+        <h2>Experience the Joy of Festivals</h2>
+        <h3>Explore Culture, Music, and Food</h3>
+    </header>
+    
+    <section>
+        <p>Festivals bring people together to celebrate culture, tradition, and happiness. Every festival has a unique significance and charm.</p>
+        <p>From music festivals to traditional celebrations, people gather to enjoy delicious food, vibrant performances, and exciting activities.</p>
+    </section>
+    
+    <section>
+        <h2>Popular Festivals Around the World</h2>
+        <ul>
+            <li>Diwali - Festival of Lights</li>
+            <li>Holi - Festival of Colors</li>
+            <li>Christmas - Joy and Celebration</li>
+        </ul>
+        
+        <h3>Must-Experience Festivals</h3>
+        <ul>
+            <li>Oktoberfest - Beer Festival in Germany</li>
+            <li>Rio Carnival - Dance Extravaganza in Brazil</li>
+            <li>Chinese New Year - Spectacular Fireworks</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Festival Image Slider</h2>
+        <div class="slider">
+            <img class="slide" src="images/diwali.jpg" alt="Festival Celebration" style="display: block;">
+            <img class="slide" src="images/doDashain.jpg" alt="Festival Crowd" style="display: none;">
+            <img class="slide" src="images/holi.jpg" alt="Another Festival" style="display: none;">
+            <img class="slide" src="images/christmus.jpg" alt="Yet Another Festival" style="display: none;">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Learn More</h2>
+        <a href="https://www.nationalgeographic.com/travel/article/festivals" target="_blank">National Geographic - Festivals</a>
+        <br>
+        <a href="https://www.britannica.com/topic/festival" target="_blank">Britannica - Festivals</a>
+    </section>
+
+    <section>
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li>Music Festival - June 15, 2025</li>
+            <li>Food Festival - July 20, 2025</li>
+            <li>Cultural Parade - August 10, 2025</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Festival Themes</h2>
+        <p>Festivals often revolve around specific themes such as music, food, art, and culture. Each theme brings a unique flavor to the celebrations.</p>
+    </section>
+
+    <section>
+        <h2>Cultural Significance</h2>
+        <p>Festivals play a crucial role in preserving cultural heritage and traditions. They provide an opportunity for communities to come together and celebrate their identity.</p>
+    </section>
+
+    <section>
+        <h2>User Testimonials</h2>
+        <blockquote>
+            <p>"The music festival was an unforgettable experience! The energy and atmosphere were incredible!" - Festival Attendee</p>
+        </blockquote>
+    </section>
+    
+    <section>
+        <h2>Festival Highlights Video</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/some_video_id" frameborder="0" allowfullscreen></iframe>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Festival Celebration. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        let slideIndex = 0;
+        function changeSlide(n) {
+            const slides = document.getElementsByClassName("slide");
+            slides[slideIndex].style.display = "none"; // Hide current slide
+            slideIndex = (slideIndex + n + slides.length) % slides.length; // Update slide index
+            slides[slideIndex].style.display = "block"; // Show new slide
+        }
+
+        // Automatic slide change every 5 seconds
+        setInterval(() => changeSlide(1), 5000);
+    </script>
+</body>
+</html>
